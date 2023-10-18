@@ -1,0 +1,55 @@
+<mxfile host="65bd71144e">
+    <diagram id="eVrg2c2xsLRQ5mpLX9vq" name="Página-1">
+        <mxGraphModel dx="560" dy="480" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="red de sucursales" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="290" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="PROVEEDORES" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="PACIENTES" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="VETERINARIA&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="30" width="130" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;-id: string;&lt;br&gt;-nombre: string;&lt;br&gt;-direccion : string;&lt;br&gt;-provedor : provedores;&lt;br&gt;-cliente: clientes;&lt;br&gt;-paciente: pacientes;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="70" width="130" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;+constructor();&lt;br&gt;+getId();&lt;br&gt;getName();&lt;br&gt;getDireccion();&lt;br&gt;+DardealtaDatos();&lt;br&gt;+EliminarDatos();&lt;br&gt;+Modificar();&lt;br&gt;&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="190" width="130" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="CLIENTES" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="30" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;-id: string&lt;br&gt;- nombre : string;&lt;br&gt;- telefono: string;&lt;br&gt;-esVip : booleano = false;&lt;br&gt;-nroVisitas: number = 0&amp;nbsp;&lt;/font&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="60" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="+constructor();&lt;br&gt;+setters();&lt;br&gt;+getters();&lt;br&gt;+isClientevip();&lt;br&gt;+MarcarEsVip();&lt;br&gt;+MarcarNoVip();&lt;br&gt;+incrementadorDeVisitas();" style="whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="140" width="120" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="-nombre: string;&lt;br&gt;-id: cliente;&lt;br&gt;-Especie: Enum( gato, perro,exotica);&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#9;&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="60" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="+constructor();&lt;br&gt;+getters();&lt;br&gt;" style="whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="130" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="-Id: string;&lt;br&gt;-Nombre: string;&lt;br&gt;-telefono: string;&lt;br&gt;" style="whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="60" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="+constructor();&lt;br&gt;+setters();&lt;br&gt;+getters();" style="whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="310" y="110" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="sucursales : veterinarias[ ]" style="whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="320" width="130" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="+constructor();&lt;br&gt;+AltaVeterinaria()&lt;br&gt;+EliminarVeterinaria();&lt;br&gt;+modificarVeterinaria();&lt;br&gt;+leerArrSucursales();" style="whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="380" width="130" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
