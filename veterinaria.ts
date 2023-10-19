@@ -1,3 +1,4 @@
+import { Mascotas } from "./mascotas";
 import { Proveedores } from "./proveedores";
 // import {  } from "";
 // import {  } from "";
@@ -8,34 +9,44 @@ export class Veterinarias {
     private direccion: string;
     private proveedor: Proveedores[];
     private cliente: Clientes[];
-    private paciente: Pacientes[];
+    private pasiente: Mascotas[];
 
     constructor(nombre: string, direccion: string) {
      nombre = this.nombre;
      direccion = this.direccion;
+     this.proveedor = [];
+     this.cliente = [];
+     this.pasiente = [];
     }
 
-    getId(){
+public getId(): string {
      return this.id;
     }
 
-    getNombre(){
+public getNombre() : string{
      return this.nombre;
     }
 
-    getDireccion(){
+public getDireccion() : string {
      return this.direccion;
     }
+public setNombre(nombre: string){
+    this.nombre= nombre;
+}
 
-    darDeAlta(){
+public setDireccion(dir: string){
+    this.direccion= dir;
+}
+
+public leerListaClientes(){};
+public leerListaProveedores(){};
+public leerlistaMascotas(){};
+public agregarMascotas(){};
+public agregarClientes(){};
+public agregarProveedores(){};
+
+eliminarDatos(){
 
     }
 
-    eliminarDatos(){
-
-    }
-
-    modificar(){
-
-    }
 }

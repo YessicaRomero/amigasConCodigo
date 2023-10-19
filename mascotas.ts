@@ -10,10 +10,18 @@ enum animalTypeEnum{
 export class Mascotas {
     private especie: animalTypeEnum;
     private nombre: string;
-    private dueno : 
+     
     
-    public constructor(especie : animalTypeEnum, nombre : string) {
+ public constructor (especie : animalTypeEnum, nombre : string) {
         this.especie= especie;
         this.nombre = nombre;
     }
+ public getEspecie(): string {
+    return this.especie;
+ }
+ public getNombre() : string {
+    return this.nombre;
+ }
+ public setNombre(nombre: string){
+    this.nombre = nombre;
 }
