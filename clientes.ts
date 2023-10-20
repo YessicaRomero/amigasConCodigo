@@ -1,38 +1,47 @@
+
+import { Mascotas } from "./mascotas";
+
   export class Clientes{
     private name:string ;
-   private tel : number;
+    private tel : number;
     private id :string = (Math.random() + Date.now()).toString();
     private visitas: number = 0;
-    private vip: boolean ;
+    private esvip: boolean = false;
+    private mascotas : Mascotas[]
 
-    constructor(name: string, tel : number, vip: boolean){
+    constructor(name: string, tel : number){
         this.name = name;
         this.tel = tel;
-        this.id;
-        this.vip = false;
     }
-      getNombre(){
+    public  getNombre(){
         return this.name
       }  
-      getTel(){
+    public  getTel(){
         return this.tel;
       }
-        getId(){
+    public    getId(){
             return this.id;
         }
-        getVisitas(){
+    public    getVisitas(){
             return this.visitas
         }
-        setName(name:string){
+    public    setName(name:string){
             this.name = name;
         }
-        setTel(tel:number){
+    public    setTel(tel:number){
             this.tel = tel;
         }
-        public isVip(visitas: number){
-            if(visitas >= 5){
-                this.vip = true;
-            console.log(`${this.getNombre}, es usuario Vip`)
-            }
+    public EsVip(): boolean{
+        return this.esvip
+        
         }
+    public MarcarEsVip () : boolean {
+        return this.esvip = true;
+    }
+    public MarcarNoEsVip () : boolean {
+        return this.esvip = false;
+    }  
+    public incrementadorDeVisitas() {
+        return this.visitas + 1 ;
+    }
 }

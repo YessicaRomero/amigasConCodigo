@@ -1,3 +1,4 @@
+import { Clientes } from "./clientes";
 
 
 enum animalTypeEnum{
@@ -10,7 +11,7 @@ enum animalTypeEnum{
 export class Mascotas {
     private especie: animalTypeEnum;
     private nombre: string;
-     
+    private idDueño : Clientes 
     
  public constructor (especie : animalTypeEnum, nombre : string) {
         this.especie= especie;
@@ -24,4 +25,8 @@ export class Mascotas {
  }
  public setNombre(nombre: string){
     this.nombre = nombre;
+}
+public getId (){
+   return this.idDueño.getId();
+}
 }

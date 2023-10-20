@@ -2,7 +2,6 @@ import { Mascotas } from "./mascotas";
 import { Proveedores } from "./proveedores";
 import { Clientes } from "./clientes";
 
-
 export class Veterinarias {
     private id: string = (Math.random() +  Date.now()).toString();
     private nombre: string;
