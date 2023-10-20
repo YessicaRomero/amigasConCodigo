@@ -1,4 +1,4 @@
-class Clientes{
+  export class Clientes{
     private name:string ;
    private tel : number;
     private id :string = (Math.random() + Date.now()).toString();
