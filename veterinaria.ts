@@ -1,5 +1,6 @@
 import { Mascotas } from "./mascotas";
 import { Proveedores } from "./proveedores";
+import { Clientes } from "./clientes";
 // import {  } from "";
 // import {  } from "";
 
