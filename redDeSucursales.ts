@@ -32,7 +32,8 @@ class Gestora {
      
       if (confirmado) {
       this.sucursales.splice(vetIndex, 1);
-      console.log("Sucursal eliminada.")
+      console.log("Sucursal eliminada.");
+      this.mostrarListaSucursales();
     } else {
       console.log("Error.Sucursal no eliminada.");  
    }
@@ -42,11 +43,11 @@ class Gestora {
   }
 }
 
-var gestora = new Gestora();
+let gestora = new Gestora();
 
-var veterinaria01 = new Veterinarias("hola", "adios");
-var veterinaria02 = new Veterinarias("ailen", "massa");
+let veterinaria01 = new Veterinarias("hola", "adios");
+let veterinaria02 = new Veterinarias("ailen", "massa");
 gestora.agregarSucursal(veterinaria01);
 gestora.agregarSucursal(veterinaria02);
-gestora.eliminarSucursal();
 gestora.mostrarListaSucursales();
+gestora.eliminarSucursal();
