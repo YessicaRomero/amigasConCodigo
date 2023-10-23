@@ -8,14 +8,14 @@ export class Veterinarias {
     private direccion: string;
     private proveedor: Proveedores[];
     private cliente: Clientes[];
-    private pasiente: Mascotas[];
+    private paciente: Mascotas[];
 
     constructor(nombre: string, direccion: string) {
-     nombre = this.nombre;
-     direccion = this.direccion;
+     this.nombre = nombre;
+     this.direccion = direccion ;
      this.proveedor = [];
      this.cliente = [];
-     this.pasiente = [];
+     this.paciente = [];
     }
 
 public getId(): string {
@@ -37,15 +37,37 @@ public setDireccion(dir: string){
     this.direccion= dir;
 }
 
-public leerListaClientes(){};
-public leerListaProveedores(){};
-public leerlistaMascotas(){};
-public agregarMascotas(){};
-public agregarClientes(){};
-public agregarProveedores(){};
+public leerListaClientes(){
+     console.log("El contenido de la lista es: ");
+    this.cliente.forEach (cliente => {console.log(cliente)})
+};
 
-eliminarDatos(){
+public leerListaProveedores(){
+    console.log("El contenido de la lista es: ");
+    this.proveedor.forEach (proovedor => {console.log(proovedor)})
+};
+
+public leerlistaMascotas(){
+    console.log("El contenido de la lista es: ");
+    this.paciente.forEach (paciente => {console.log(paciente)})
+};
+
+public agregarMascotas(paciente:Mascotas){
+    this.paciente.push(paciente);
+};
+public agregarClientes(cliente:Clientes){
+    this.cliente.push(cliente);
+};
+public agregarProveedores(proovedor:Proveedores){
+    this.proveedor.push(proovedor);
+};
+
+    public eliminarDatos(){
 
     }
-
+ 
+    public sumarVisita(){
+        
+    }
 }
+
