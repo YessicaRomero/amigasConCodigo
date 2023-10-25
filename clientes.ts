@@ -7,8 +7,7 @@ import { Mascotas } from "./mascotas";
     private id :string = (Math.random() + Date.now()).toString();
     private visitas: number = 0;
     private esvip: boolean = false;
-    private mascotas : Mascotas[]
-
+    
     constructor(name: string, tel : number){
         this.name = name;
         this.tel = tel;

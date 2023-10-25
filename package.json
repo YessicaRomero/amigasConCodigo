@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/YessicaRomero/amigasConCodigo/issues"
   },
-  "homepage": "https://github.com/YessicaRomero/amigasConCodigo#readme"
+  "homepage": "https://github.com/YessicaRomero/amigasConCodigo#readme",
+  "dependencies": {
+    "@types/readline-sync": "^1.4.6",
+    "readline-sync": "^1.4.10"
+  }
 }
