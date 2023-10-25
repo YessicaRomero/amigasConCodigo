@@ -7,7 +7,9 @@ export class Proveedores {
      nombre = this.nombre;
      telefono = this.telefono;
     }
-
+    public    getId(){
+        return this.id;
+    }
     setNombre(nombre:string) {
      this.nombre = nombre;
     };
