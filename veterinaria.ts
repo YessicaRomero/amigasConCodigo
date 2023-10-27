@@ -14,8 +14,8 @@ export class Veterinarias {
     private pacientes: Mascotas[];
 
     constructor(nombre: string, direccion: string) {
-     nombre = this.nombre;
-     direccion = this.direccion;
+    this.nombre = nombre;
+     this.direccion = direccion ;
      this.proveedores = [];
      this.clientes = [];
      this.pacientes = [];
@@ -43,7 +43,7 @@ public setDireccion(dir: string){
 public leerListaClientes(){
     const resultados = this.clientes;
     if (resultados) {
-      console.log("===LISTA DE CLIENTES===");
+      console.log(`===LISTA DE CLIENTES de ${this.getNombre()}==`);
       if (!this.clientes.length) {
         console.log("no se encontro el cliente \n");
       } else {
@@ -55,9 +55,10 @@ public leerListaClientes(){
         Telefono: ${cl.getTel()}
         Visitas: ${cl.getVisitas()}
         Cliente Vip: ${cl.EsVip()}
+        mascotas : ${cl.verMascotas()}
         ------------------
                
-        `);
+        `)
         });
       }
     }
@@ -67,7 +68,7 @@ public leerListaClientes(){
 public leerListaProveedores(){
     const resultados = this.proveedores;
     if (resultados) {
-      console.log("===LISTA DE PROOVEDORES===");
+      console.log(`===LISTA DE PROVEEDORES DE ${this.getNombre()}==`);
       if (!this.proveedores.length) {
         console.log("no se encontro el provedor \n");
       } else {
@@ -89,7 +90,7 @@ public leerListaProveedores(){
 public leerlistaPacientes(){
     const resultados = this.pacientes;
     if (resultados) {
-      console.log("===LISTA DE PACIENTES===");
+      console.log(`===LISTA DE PACIENTES ${this.getNombre()}==`);
       if (!this.pacientes.length) {
         console.log("no se encontro el paciente \n");
       } else {
@@ -111,21 +112,22 @@ public leerlistaPacientes(){
 };
 public agregarPaciente(paciente : Mascotas) : void {
     this.pacientes.push(paciente);
-    console.log("===paciente registrado===");
+    console.log(`===paciente registrado en veterinaria ${this.getNombre()}===`);
+    
     
   };
 public agregarClientes(cliente : Clientes): void {
     this.clientes.push(cliente);
-    console.log("===cliente registrado===");
-    
+    console.log(`===cliente registrado en veterinaria ${this.getNombre()}===`);
+    cliente.sumarVisitas();
   };
 public agregarProveedores(proveedor: Proveedores): void {
     this.proveedores.push(proveedor);
-    console.log("===proveedor registrado===");
+    console.log(`===proveedor registrado en veterinaria ${this.getNombre()}===`);
     
   };
 public eliminarClientes(){
-    console.log("===BORRAR CLIENTE=== \n");
+    console.log(`===BORRAR CLIENTE DE LA LISTA ${this.getNombre()}=== \n`);
       const IdClienteABorrar = rls.question("ingrese el id del cliente a borrar:");
       const ClienteIndex = this.clientes.findIndex(
         (cli) => cli.getId() === IdClienteABorrar
@@ -143,14 +145,14 @@ public eliminarClientes(){
      } 
 
 public eliminarPacientes(){
-  console.log("===BORRAR PACIENTE=== \n");
+  console.log(`===BORRAR PACIENTE DE LA LISTA ${this.getNombre()}=== \n`);
       const IdPacABorrar = rls.question("ingrese el id del paciente a borrar:");
       const PacIndex = this.pacientes.findIndex(
         (pac) => pac.getId() === IdPacABorrar
       );
 
       if (PacIndex !== -1) {
-        this.clientes.splice(PacIndex, 1);
+        this.pacientes.splice(PacIndex, 1);
         console.log("Paciente eliminado");
           this.leerlistaPacientes();
         } else {
@@ -160,7 +162,7 @@ public eliminarPacientes(){
       rls.keyInPause();
 };
 public eliminarProveedores(){
-  console.log("===BORRAR PROVEEDOR=== \n");
+  console.log(`===BORRAR PROOVEDOR DE LA LISTA ${this.getNombre()}=== \n`);
       const IdProvABorrar = rls.question("ingrese el id del proveedor a borrar:");
       const ProvIndex = this.proveedores.findIndex(
         (prov) => prov.getId() === IdProvABorrar
@@ -176,10 +178,5 @@ public eliminarProveedores(){
      
       rls.keyInPause();
 };
-public vincularMascotasClientes (cliente: Clientes, mascota:Mascotas){
-const agregarMascota = this.pacientes.findIndex(
-  (pac) => pac.getId() === cliente.getId() && pac.getId() === mascota.getId()
-);
 
-}
 }
