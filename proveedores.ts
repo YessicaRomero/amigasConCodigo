@@ -4,8 +4,8 @@ export class Proveedores {
     private telefono: string;
 
     public constructor (nombre:string, telefono:string){
-     nombre = this.nombre;
-     telefono = this.telefono;
+    this.nombre = nombre;
+     this.telefono = telefono;
     }
     public    getId(){
         return this.id;

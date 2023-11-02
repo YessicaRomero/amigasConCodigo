@@ -1,14 +1,20 @@
 import { Mascotas } from "./mascotas";
+import { animalTypeEnum } from "./mascotas";
+
+
   export class Clientes{
     private name:string ;
     private tel : number;
     private id :string = (Math.random() + Date.now()).toString();
     private visitas: number = 0;
     private esvip = false;
-    private mascotasdeCliente : Mascotas[] = [];
+    private mascotasdeCliente : Mascotas[] = [] ;
+   
     constructor(name: string, tel : number){
         this.name = name;
         this.tel = tel;
+        this.mascotasdeCliente= [];
+     
     }
     public  getNombre(){
         return this.name
@@ -22,12 +28,12 @@ import { Mascotas } from "./mascotas";
     public   getVisitas(){
             return this.visitas
         }
-        public sumarVisitas(){
+    public sumarVisitas(){
             this.visitas++;
             if(this.visitas >= 5){
                 this.esvip = true;
-            }
-        }
+            } 
+        }   
     public   setName(name:string){
             this.name = name;
         }
@@ -37,16 +43,28 @@ import { Mascotas } from "./mascotas";
     public EsVip(): boolean{
         return this.esvip
         }
-        public agregarMascota(mascota:Mascotas) {
-            this.mascotasdeCliente.push(mascota);
-        }
+    public VincularMascota(mascota: Mascotas) {
+      if(mascota.getId() === this.id){
+    this.mascotasdeCliente.push(mascota);
+    console.log("mascota vinculada");}
+    
+       else {
+        console.log("el id no es igual al del dueño que quiere agregar.");
+        
+       }
+   
 }
-const cliente1 = new Clientes("luna",344645)
-console.log(cliente1);
-cliente1.sumarVisitas();
-cliente1.sumarVisitas();
-cliente1.sumarVisitas();
-cliente1.sumarVisitas();
-cliente1.sumarVisitas();
-cliente1.sumarVisitas();
-console.log(cliente1);
+public verMascotas(): string {
+    console.log(this.mascotasdeCliente);
+    
+    let nombresMascotas = '';
+  
+    for (const mas of this.mascotasdeCliente) {
+      nombresMascotas += mas.getNombre() + ', ';
+    }
+  
+    // Elimina la coma adicional al final y devuelve la cadena
+    return nombresMascotas.slice(0, -2);
+  }
+
+}   

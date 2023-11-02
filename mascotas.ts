@@ -1,7 +1,7 @@
 import { Clientes } from "./clientes";
 
 
-enum animalTypeEnum{
+export enum animalTypeEnum{
         perro="perro",
         gato="gato",
         otroAnimal= "exotico"
@@ -11,11 +11,12 @@ enum animalTypeEnum{
 export class Mascotas {
     private especie: animalTypeEnum;
     private nombre: string;
-    private idDueño : Clientes 
+    private idDueño : string
     
- public constructor (especie : animalTypeEnum, nombre : string) {
-        this.especie= especie;
-        this.nombre = nombre;
+ public constructor (especie : animalTypeEnum, nombre : string, dueño: Clientes) {
+      this.especie= especie;
+      this.nombre = nombre;
+      this.idDueño = dueño.getId()         
     }
  public getEspecie(): string {
     return this.especie;
@@ -27,6 +28,8 @@ export class Mascotas {
     this.nombre = nombre;
 }
 public getId (){
-   return this.idDueño.getId();
+   return this.idDueño;
 }
+
 }
+
