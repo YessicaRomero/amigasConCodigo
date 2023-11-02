@@ -11,7 +11,10 @@ var Gestora = /** @class */ (function () {
     }
     Gestora.prototype.mostrarListaSucursales = function () {
         console.log("El contenido de la lista es: ");
-        this.sucursales.forEach(function (sucursal) { console.log(sucursal); });
+        this.sucursales.forEach(function (sucursal) {
+            var sucursalString = JSON.stringify(sucursal, null, 2);
+            console.log(sucursalString);
+        });
         rls.keyInPause();
     };
     ;
@@ -48,7 +51,7 @@ var cliente1 = new clientes_1.Clientes("luna", 344645);
 var cliente02 = new clientes_1.Clientes("yessica", 2245789);
 //mascotas
 var Masc01 = new mascotas_1.Mascotas(mascotas_1.animalTypeEnum.gato, "lolo", cliente1);
-var Mas02 = new mascotas_1.Mascotas(mascotas_1.animalTypeEnum.perro, "vera", cliente02);
+var Mas02 = new mascotas_1.Mascotas(mascotas_1.animalTypeEnum.perro, "vera", cliente1);
 //proveedores
 var pr01 = new proveedores_1.Proveedores("guadalupe", "22548645");
 var pr02 = new proveedores_1.Proveedores("ailen", "25469854");
@@ -78,7 +81,7 @@ gestora.agregarSucursal(veterinaria02);
 //cliente02.sumarVisitas()
 //cliente02.sumarVisitas()
 //veterinaria02.leerListaClientes()
-//gestora.mostrarListaSucursales();
+gestora.mostrarListaSucursales();
 //eliminar
 //veterinaria01.leerListaClientes()
 //veterinaria01.eliminarClientes()
@@ -88,4 +91,3 @@ gestora.agregarSucursal(veterinaria02);
 //veterinaria01.eliminarPacientes()
 //gestora.mostrarListaSucursales()
 //gestora.eliminarSucursal(veterinaria01)
-gestora.mostrarListaSucursales();

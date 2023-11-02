@@ -8,11 +8,13 @@ import { animalTypeEnum } from "./mascotas";
     private id :string = (Math.random() + Date.now()).toString();
     private visitas: number = 0;
     private esvip = false;
-    private mascotasdeCliente : Mascotas[] ;
+    private mascotasdeCliente : Mascotas[] = [] ;
+   
     constructor(name: string, tel : number){
         this.name = name;
         this.tel = tel;
-        this.mascotasdeCliente = [];
+        this.mascotasdeCliente= [];
+     
     }
     public  getNombre(){
         return this.name
@@ -52,18 +54,17 @@ import { animalTypeEnum } from "./mascotas";
        }
    
 }
-    public verMascotas() {
-        this.mascotasdeCliente.forEach((mas) => {
-            console.log(`
-          ------------------
-          ID: ${mas.getId()}
-          Nombre: ${mas.getNombre()}
-          Especie: ${mas.getEspecie()}
-         
-          ------------------
-                 
-          `);
-    })
-}
+public verMascotas(): string {
+    console.log(this.mascotasdeCliente);
     
+    let nombresMascotas = '';
+  
+    for (const mas of this.mascotasdeCliente) {
+      nombresMascotas += mas.getNombre() + ', ';
+    }
+  
+    // Elimina la coma adicional al final y devuelve la cadena
+    return nombresMascotas.slice(0, -2);
+  }
+
 }   

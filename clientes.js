@@ -5,6 +5,7 @@ var Clientes = /** @class */ (function () {
         this.id = (Math.random() + Date.now()).toString();
         this.visitas = 0;
         this.esvip = false;
+        this.mascotasdeCliente = [];
         this.name = name;
         this.tel = tel;
         this.mascotasdeCliente = [];
@@ -46,9 +47,14 @@ var Clientes = /** @class */ (function () {
         }
     };
     Clientes.prototype.verMascotas = function () {
-        this.mascotasdeCliente.forEach(function (mas) {
-            console.log("\n          ------------------\n          ID: " + mas.getId() + "\n          Nombre: " + mas.getNombre() + "\n          Especie: " + mas.getEspecie() + "\n         \n          ------------------\n                 \n          ");
-        });
+        console.log(this.mascotasdeCliente);
+        var nombresMascotas = '';
+        for (var _i = 0, _a = this.mascotasdeCliente; _i < _a.length; _i++) {
+            var mas = _a[_i];
+            nombresMascotas += mas.getNombre() + ', ';
+        }
+        // Elimina la coma adicional al final y devuelve la cadena
+        return nombresMascotas.slice(0, -2);
     };
     return Clientes;
 }());

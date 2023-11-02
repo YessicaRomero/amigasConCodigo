@@ -28,7 +28,7 @@ var Veterinarias = /** @class */ (function () {
     Veterinarias.prototype.leerListaClientes = function () {
         var resultados = this.clientes;
         if (resultados) {
-            console.log("===LISTA DE CLIENTES de " + this.getNombre() + "==");
+            console.log("===LISTA DE CLIENTES de \"" + this.getNombre() + "\"==");
             if (!this.clientes.length) {
                 console.log("no se encontro el cliente \n");
             }

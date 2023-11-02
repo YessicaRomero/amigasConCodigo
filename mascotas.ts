@@ -30,5 +30,6 @@ export class Mascotas {
 public getId (){
    return this.idDueño;
 }
+
 }
 

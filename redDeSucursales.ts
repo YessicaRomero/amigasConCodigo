@@ -14,7 +14,9 @@ class Gestora {
 
    public mostrarListaSucursales(){
     console.log("El contenido de la lista es: ");
-    this.sucursales.forEach (sucursal => {console.log(sucursal)})
+    this.sucursales.forEach (sucursal => {
+      const sucursalString = JSON.stringify(sucursal, null, 2);
+      console.log(sucursalString)})
     rls.keyInPause();
    };
 
@@ -56,7 +58,7 @@ const cliente02 = new Clientes("yessica",2245789)
 
 //mascotas
 const Masc01 = new Mascotas(animalTypeEnum.gato,"lolo",cliente1);
-const Mas02 = new Mascotas(animalTypeEnum.perro,"vera",cliente02);
+const Mas02 = new Mascotas(animalTypeEnum.perro,"vera",cliente1);
 
 //proveedores
 const pr01 = new Proveedores("guadalupe","22548645");
@@ -96,7 +98,7 @@ gestora.agregarSucursal(veterinaria02);
 //cliente02.sumarVisitas()
 
 //veterinaria02.leerListaClientes()
-//gestora.mostrarListaSucursales();
+gestora.mostrarListaSucursales();
 
 
 //eliminar
@@ -113,7 +115,9 @@ gestora.agregarSucursal(veterinaria02);
 
 //gestora.eliminarSucursal(veterinaria01)
 
-gestora.mostrarListaSucursales();
+
+
+
 
 
 
