@@ -131,14 +131,16 @@ public eliminarClientes(){
       const IdClienteABorrar = rls.question("ingrese el id del cliente a borrar:");
       const ClienteIndex = this.clientes.findIndex(
         (cli) => cli.getId() === IdClienteABorrar
-      );
+      )
+      ;
 
       if (ClienteIndex !== -1) {
+        const clienteABorrar = this.clientes[ClienteIndex]
         this.clientes.splice(ClienteIndex, 1);
-        console.log("cliente eliminado");
-          this.leerListaClientes();
+        console.log(`Eliminaste al cliente ${clienteABorrar.getNombre()}`);
+          
         } else {
-          console.log("Cliente no eliminado. \n");
+          console.log("Error. Cliente no eliminado. \n");
         }
      
       rls.keyInPause();
@@ -152,11 +154,12 @@ public eliminarPacientes(){
       );
 
       if (PacIndex !== -1) {
+        const pacienteABorrar = this.pacientes[PacIndex]
         this.pacientes.splice(PacIndex, 1);
-        console.log("Paciente eliminado");
-          this.leerlistaPacientes();
+        console.log(`Eliminaste al paciente ${pacienteABorrar.getNombre()}`);
+          
         } else {
-          console.log("Paciente no eliminado. \n");
+          console.log("Error. Paciente no eliminado. \n");
         }
      
       rls.keyInPause();
@@ -169,14 +172,53 @@ public eliminarProveedores(){
       );
 
       if (ProvIndex !== -1) {
+        const provABorrar = this.pacientes[ProvIndex]
         this.proveedores.splice(ProvIndex, 1);
-        console.log("proveedor eliminado");
-          this.leerListaProveedores();
+        console.log(`Eliminaste al proveedor ${provABorrar.getNombre()}`);
+          
         } else {
-          console.log("proveedor no eliminado. \n");
+          console.log("Error. Proveedor no eliminado.\n");
         }
      
       rls.keyInPause();
-};
 
-}
+    };
+
+  
+   
+   
+   
+    menu(){
+      while(true){
+      console.clear();
+      console.log(`Menu de veterinaria "${this.getNombre()}"`)
+      const choice = rls.keyInSelect(this.menuOpcion)
+      switch(choice){
+          case 0 :
+          this.leerListaClientes()
+          break
+          case 1 :
+              this.leerListaProveedores()
+              break
+              case 2 :
+                  this.leerlistaPacientes()
+                  break
+                  case 3:
+                      this.eliminarClientes()
+                      break;
+                        case 4 :
+                          this.eliminarPacientes()
+                          break;
+                          case 5 :
+                            this.eliminarProveedores()
+                            break;
+                      default:
+                      console.log("GRACIAAAS :)")
+                      return;
+      }
+    }
+  }
+  menuOpcion = ["lista Clientes", "lista Proveedores", "lista Pacientes", "Eliminar Cliente","Eliminar Paciente", "Eliminar Proveedor", ]
+  }
+
+

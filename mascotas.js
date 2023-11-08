@@ -1,5 +1,6 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Mascotas = exports.animalTypeEnum = void 0;
 var animalTypeEnum;
 (function (animalTypeEnum) {
     animalTypeEnum["perro"] = "perro";

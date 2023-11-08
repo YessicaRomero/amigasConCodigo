@@ -1,5 +1,6 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Clientes = void 0;
 var Clientes = /** @class */ (function () {
     function Clientes(name, tel) {
         this.id = (Math.random() + Date.now()).toString();
@@ -47,7 +48,6 @@ var Clientes = /** @class */ (function () {
         }
     };
     Clientes.prototype.verMascotas = function () {
-        console.log(this.mascotasdeCliente);
         var nombresMascotas = '';
         for (var _i = 0, _a = this.mascotasdeCliente; _i < _a.length; _i++) {
             var mas = _a[_i];

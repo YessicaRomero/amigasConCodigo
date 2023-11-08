@@ -55,7 +55,7 @@ import { animalTypeEnum } from "./mascotas";
    
 }
 public verMascotas(): string {
-    console.log(this.mascotasdeCliente);
+    
     
     let nombresMascotas = '';
   

@@ -41,79 +41,105 @@ class Gestora {
       if (confirmado) {
       this.sucursales.splice(vetIndex, 1);
       console.log("Sucursal eliminada.");
-      this.mostrarListaSucursales();
+      
     } else {
       console.log("Error.Sucursal no eliminada.");  
    }
   } else {
     console.log("Sucursal no encontrada.")
   }
+   }
+
+
+  menu(){
+    while(true){
+    console.clear();
+    console.log("Menu de Sucursales")
+    const choice = rls.keyInSelect(this.menuOpcion)
+    switch(choice){
+        case 0 :
+        this.mostrarListaSucursales()
+        break
+        case 1 :
+          this.eliminarSucursal()
+            break;
+                  default:
+                    console.log("GRACIAAAS :)")
+                    return;
+    }
   }
 }
+menuOpcion = ["lista Sucursales", "Eliminar Sucursal" ]
+}
+  
 
-let gestora = new Gestora();
-//clientes
-const cliente1 = new Clientes("luna",344645)
-const cliente02 = new Clientes("yessica",2245789)
 
-//mascotas
-const Masc01 = new Mascotas(animalTypeEnum.gato,"lolo",cliente1);
-const Mas02 = new Mascotas(animalTypeEnum.perro,"vera",cliente1);
+const gestora = new Gestora();
 
-//proveedores
-const pr01 = new Proveedores("guadalupe","22548645");
-const pr02 = new Proveedores("ailen","25469854")
+//instanciamos clientes
+const cliente1 = new Clientes("Luna",344645)
+const cliente02 = new Clientes("Yessica",2245789)
+const cliente03 = new Clientes("Ailen", 290876438)
+const cliente04 = new Clientes("Lucas", 2908438)
 
-// veterinarias
-const veterinaria01 = new Veterinarias("hola", "adios");
-const veterinaria02 = new Veterinarias("ailen", "massa");
 
+//instanciamos mascotas
+const Masc01 = new Mascotas(animalTypeEnum.gato,"Lolo",cliente1);
+const Mas02 = new Mascotas(animalTypeEnum.perro,"Vera",cliente03);
+const Mas03 = new Mascotas(animalTypeEnum.otroAnimal,"Mora",cliente02);
+const Mas04 = new Mascotas(animalTypeEnum.gato,"Bigotes",cliente03);
+//instanciamos proveedores
+const pr01 = new Proveedores("Guadalupe","22548645");
+const pr02 = new Proveedores("Ailen","25469854")
+
+//instanciamos veterinarias
+const veterinaria01 = new Veterinarias("Animaladas","Ugarte 675");
+const veterinaria02 = new Veterinarias("PetShop", "Pedro N. Carrera 671");
+
+// agregamos clientes
 veterinaria01.agregarClientes(cliente1)
-veterinaria02.agregarClientes(cliente02)
-veterinaria01.leerListaClientes();
-veterinaria02.leerListaClientes()
+veterinaria01.agregarClientes(cliente02)
+veterinaria02.agregarClientes(cliente03)
+veterinaria02.agregarClientes(cliente04)
 
+// agregamos pacientes
 veterinaria01.agregarPaciente(Masc01)
+veterinaria01.agregarPaciente(Mas03)
 veterinaria02.agregarPaciente(Mas02)
-veterinaria01.leerlistaPacientes()
-veterinaria02.leerlistaPacientes()
+veterinaria02.agregarPaciente(Mas04)
 
+// agregamos proveedores
 veterinaria01.agregarProveedores(pr01)
 veterinaria02.agregarProveedores(pr02)
-veterinaria01.leerListaProveedores()
-veterinaria02.leerListaProveedores()
 
-
+// vinculamos clientes y mascotas
+cliente03.VincularMascota(Mas04)
+cliente03.VincularMascota(Mas02)
 cliente1.VincularMascota(Masc01)
-cliente1.VincularMascota(Mas02)
-veterinaria01.leerListaClientes();
+cliente02.VincularMascota(Mas03)
 
+// verificacion de IDs
+cliente02.VincularMascota(Mas02)
 
+veterinaria01.menu()
+veterinaria02.menu()
+
+// cambiamos un cliente a VIP
+cliente02.sumarVisitas()
+cliente02.sumarVisitas()
+cliente02.sumarVisitas()
+cliente02.sumarVisitas()
+
+veterinaria01.leerListaClientes()
+
+// Agregamos sucursales a la red
 gestora.agregarSucursal(veterinaria01);
 gestora.agregarSucursal(veterinaria02);
-//gestora.mostrarListaSucursales();
-//cliente02.sumarVisitas()
-//cliente02.sumarVisitas()
-//cliente02.sumarVisitas()
-//cliente02.sumarVisitas()
-
-//veterinaria02.leerListaClientes()
-gestora.mostrarListaSucursales();
+gestora.menu()
 
 
-//eliminar
-//veterinaria01.leerListaClientes()
-//veterinaria01.eliminarClientes()
 
-//veterinaria01.leerListaProveedores()
-//veterinaria01.eliminarProveedores()
 
-//veterinaria01.leerlistaPacientes()
-//veterinaria01.eliminarPacientes()
-
-//gestora.mostrarListaSucursales()
-
-//gestora.eliminarSucursal(veterinaria01)
 
 
 
