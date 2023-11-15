@@ -124,7 +124,7 @@ cliente02.VincularMascota(Mas02)
 veterinaria01.menu()
 veterinaria02.menu()
 
-// cambiamos un cliente a VIP
+// cambiamos un cliente a VIP0
 cliente02.sumarVisitas()
 cliente02.sumarVisitas()
 cliente02.sumarVisitas()
@@ -137,7 +137,9 @@ gestora.agregarSucursal(veterinaria01);
 gestora.agregarSucursal(veterinaria02);
 gestora.menu()
 
-
+//modificar datos
+cliente1.setName("sol")
+veterinaria01.leerListaClientes()
 
 
 

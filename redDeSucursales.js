@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var rls = require("readline-sync");
 var veterinaria_1 = require("./veterinaria");
 var mascotas_1 = require("./mascotas");
@@ -30,11 +30,10 @@ var Gestora = /** @class */ (function () {
         var vetIndex = this.sucursales.findIndex(function (vet) { return vet.getId() === vetBorrar; });
         if (vetIndex !== -1) {
             var vetBorrar_1 = this.sucursales[vetIndex];
-            var confirmado = rls.keyInYN("desea eliminar la sucursal ".concat(vetBorrar_1.getNombre(), "? (Y/N)"));
+            var confirmado = rls.keyInYN("desea eliminar la sucursal " + vetBorrar_1.getNombre() + "? (Y/N)");
             if (confirmado) {
                 this.sucursales.splice(vetIndex, 1);
                 console.log("Sucursal eliminada.");
-                this.mostrarListaSucursales();
             }
             else {
                 console.log("Error.Sucursal no eliminada.");
@@ -47,6 +46,7 @@ var Gestora = /** @class */ (function () {
     Gestora.prototype.menu = function () {
         while (true) {
             console.clear();
+            console.log("Menu de Sucursales");
             var choice = rls.keyInSelect(this.menuOpcion);
             switch (choice) {
                 case 0:
@@ -102,7 +102,7 @@ cliente02.VincularMascota(Mas03);
 cliente02.VincularMascota(Mas02);
 veterinaria01.menu();
 veterinaria02.menu();
-// cambiamos un cliente a VIP
+// cambiamos un cliente a VIP0
 cliente02.sumarVisitas();
 cliente02.sumarVisitas();
 cliente02.sumarVisitas();
@@ -112,3 +112,6 @@ veterinaria01.leerListaClientes();
 gestora.agregarSucursal(veterinaria01);
 gestora.agregarSucursal(veterinaria02);
 gestora.menu();
+//modificar datos
+cliente1.setName("sol");
+veterinaria01.leerListaClientes();

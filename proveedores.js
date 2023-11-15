@@ -1,6 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Proveedores = void 0;
+exports.__esModule = true;
 var Proveedores = /** @class */ (function () {
     function Proveedores(nombre, telefono) {
         this.id = (Math.random() + Date.now()).toString();

@@ -70,7 +70,7 @@ public leerListaProveedores(){
     if (resultados) {
       console.log(`===LISTA DE PROVEEDORES DE ${this.getNombre()}==`);
       if (!this.proveedores.length) {
-        console.log("no se encontro el provedor \n");
+        console.log("no se encontro el proveedor \n");
       } else {
         this.proveedores.forEach((prov) => {
           console.log(`
@@ -172,7 +172,7 @@ public eliminarProveedores(){
       );
 
       if (ProvIndex !== -1) {
-        const provABorrar = this.pacientes[ProvIndex]
+        const provABorrar = this.proveedores[ProvIndex]
         this.proveedores.splice(ProvIndex, 1);
         console.log(`Eliminaste al proveedor ${provABorrar.getNombre()}`);
           
